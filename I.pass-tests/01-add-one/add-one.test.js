@@ -60,10 +60,16 @@ describe("Given the addOne function", () => {
     expect(() => addOne(myArray)).toThrow(/^Invalid format$/);
   });
 
-  it("Will return same array if recieved an array with Strings", () => {
+  it("Will throw error when received a string inside of a array of numbers", () => {
     // Arrange
     const myArray = [55, "-57", 53, 14];
-    const expected = [55, "-57", 53, 14];
+    // Act and Assert
+    expect(() => addOne(myArray)).toThrow(/^Invalid format$/);
+  });
+
+  it("Will throw error when received a null inside of a array of numbers", () => {
+    // Arrange
+    const myArray = [55, 35, null, 14];
     // Act and Assert
     expect(() => addOne(myArray)).toThrow(/^Invalid format$/);
   });
