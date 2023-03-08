@@ -16,3 +16,6 @@ const factorial = (int) => {
 };
 
 module.exports = { factorial };
+
+// Internal iterador
+// External iterator

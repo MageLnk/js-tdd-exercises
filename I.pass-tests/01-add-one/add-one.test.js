@@ -94,4 +94,34 @@ describe("Given the addOne function", () => {
     // Act and Assert
     expect(() => addOne(myArray)).toThrow(/^Invalid format$/);
   });
+
+  it("Will throw error when received a boolean inside of a array of numbers", () => {
+    // Arrange
+    const myArray = [55, 35, true, 14];
+    // Act and Assert
+    expect(() => addOne(myArray)).toThrow(/^Invalid format$/);
+  });
+
+  it("Will throw error when received an array inside of a array of numbers", () => {
+    // Arrange
+    const myArray = [55, 35, [undefined], 14];
+    // Act and Assert
+    expect(() => addOne(myArray)).toThrow(/^Invalid format$/);
+  });
+
+  it("Will throw error when received an empty array inside of a array of numbers", () => {
+    // Arrange
+    const myArray = [55, 35, [], 14];
+    // Act and Assert
+    expect(() => addOne(myArray)).toThrow(/^Invalid format$/);
+  });
+
+  it("Will throw error when received an object inside of a array of numbers", () => {
+    // Arrange
+    const myArray = [55, 35, {}, 14];
+    // Act and Assert
+    expect(() => addOne(myArray)).toThrow(/^Invalid format$/);
+  });
+
+  // Arreglo dentro, falso. Un objeto
 });
