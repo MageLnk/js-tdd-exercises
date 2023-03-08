@@ -1,17 +1,28 @@
-var findTheNeedle = require("./find-needle");
+const { findTheWord } = require("./find-needle");
 
-test("Find the needle", function() {
-  var words = ["house", "train", "slide", "needle", "book"];
-  var expected = 3;
+describe("Given the findTheWord function", () => {
+  test(`Find the word needle in ["house", "train", "slide", "needle", "book"] and 
+  response his iterator 3`, () => {
+    //Arrange
+    const words = ["house", "train", "slide", "needle", "book"];
+    const expected = 3;
 
-  var output = findTheNeedle(words, "needle");
-  expect(output).toEqual(expected);
-});
+    // Act
+    const output = findTheWord(words, "needle");
 
-test("Find the plant", function() {
-  var words = ["plant", "shelf", "arrow", "bird"];
-  var expected = 0;
+    //Assert
+    expect(output).toEqual(expected);
+  });
 
-  var output = findTheNeedle(words, "plant");
-  expect(output).toEqual(expected);
+  test("Find the plant", () => {
+    //Arrange
+    const words = ["plant", "shelf", "arrow", "bird"];
+    const expected = 0;
+
+    // Act
+    const output = findTheWord(words, "plant");
+
+    //Assert
+    expect(output).toEqual(expected);
+  });
 });

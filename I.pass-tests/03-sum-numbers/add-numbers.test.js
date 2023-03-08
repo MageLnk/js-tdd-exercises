@@ -1,10 +1,13 @@
-var addAllnumbers = require("./add-numbers");
+const { addNumbers } = require("./add-numbers");
 
-test("Add all numbers", function() {
-  var numbers = [9, 23, 10, 3, 8];
-  var expected = 53;
-
-  var output = addAllnumbers(numbers);
-
-  expect(output).toEqual(expected);
+describe("Given the addNumbers function", () => {
+  it(`Should sum all the number inside of the length of [9, 23, 10, 3, 8] and response 53`, () => {
+    //Arrange
+    const numbers = [9, 23, 10, 3, 8];
+    const expected = 53;
+    //Act
+    const output = addNumbers(numbers);
+    //Assert
+    expect(output).toEqual(expected);
+  });
 });
