@@ -122,6 +122,4 @@ describe("Given the addOne function", () => {
     // Act and Assert
     expect(() => addOne(myArray)).toThrow(/^Invalid format$/);
   });
-
-  // Arreglo dentro, falso. Un objeto
 });
