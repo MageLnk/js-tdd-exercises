@@ -9,10 +9,12 @@
 // note: factorial of 0 is 1
 
 const factorial = (int) => {
+  if (typeof int !== "number") throw new Error("Invalid format");
+
   if (int < 0) return -1;
   if (int === 0) return 1;
 
-  return int * factorial(int - 1);
+  return Math.trunc(int) * factorial(Math.trunc(int) - 1);
 };
 
 module.exports = { factorial };

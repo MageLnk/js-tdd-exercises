@@ -72,4 +72,30 @@ describe("Given the factorial function", () => {
     // Assert
     expect(out6).toEqual(exp6);
   });
+
+  test("Should give 120 as result when recieve an 5.5 as a number", () => {
+    // Arrange
+    const in7 = 5.5;
+    const exp7 = 120;
+
+    // Act
+    const out7 = factorial(in7);
+
+    // Assert
+    expect(out7).toEqual(exp7);
+  });
+
+  it("Will throw error when received boolean", () => {
+    // Arrange
+    const testNumber = false;
+    // Act and Assert
+    expect(() => factorial(testNumber)).toThrow(/^Invalid format$/);
+  });
+
+  it("Will throw error when received a string", () => {
+    // Arrange
+    const testNumber = "test";
+    // Act and Assert
+    expect(() => factorial(testNumber)).toThrow(/^Invalid format$/);
+  });
 });
