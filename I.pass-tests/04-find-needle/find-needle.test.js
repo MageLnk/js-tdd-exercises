@@ -25,4 +25,39 @@ describe("Given the findTheWord function", () => {
     //Assert
     expect(output).toEqual(expected);
   });
+
+  it("Will throw error when received null", () => {
+    // Arrange
+    const words = null;
+    // Act & Assert
+    expect(() => findTheWord(words)).toThrow(/^Invalid format$/);
+  });
+
+  it("Will throw error when received boolean", () => {
+    // Arrange
+    const words = false;
+    // Act and Assert
+    expect(() => findTheWord(words)).toThrow(/^Invalid format$/);
+  });
+
+  it("Will throw error when received a string", () => {
+    // Arrange
+    const words = "test";
+    // Act and Assert
+    expect(() => findTheWord(words)).toThrow(/^Invalid format$/);
+  });
+
+  it("Will throw error when received an array inside of a array of numbers", () => {
+    // Arrange
+    const words = [55, 35, [undefined], 14];
+    // Act and Assert
+    expect(() => findTheWord(words)).toThrow(/^Invalid format$/);
+  });
+
+  it("Will throw error when received an empty array inside of a array of numbers", () => {
+    // Arrange
+    const words = [55, 35, [], 14];
+    // Act and Assert
+    expect(() => findTheWord(words)).toThrow(/^Invalid format$/);
+  });
 });
