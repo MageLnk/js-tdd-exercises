@@ -27,7 +27,7 @@ describe(`Given the sales function`, () => {
     expect(output).toEqual(totals);
   });
 
-  test(`Should throw error when recieve when of the objects is a wrong key}`, () => {
+  test(`Should throw error when recieve when of the objects is a wrong key`, () => {
     // Arrange
     const carsSold = [
       { make: "Ford", model: "Fiesta", colour: "Red", price: 5999 },
