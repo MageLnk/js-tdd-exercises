@@ -4,7 +4,7 @@ const removeMiddle = (words) => {
   const SearchForAnomalies = (CurrenValue) => typeof CurrenValue === "string";
   if (!words.every(SearchForAnomalies)) throw new Error("Invalid format");
 
-  const checkOdd = (num) => (num % 2 === 0 ? true : false);
+  const checkOdd = (num) => num % 2 === 0 && true;
   if (checkOdd(words.length)) throw new Error("Insert a valid odd array");
 
   return words.splice(words.length / 2, 1);
