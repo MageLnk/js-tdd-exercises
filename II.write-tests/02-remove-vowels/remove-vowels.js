@@ -1,18 +1,18 @@
-const mayusFirstLetter = (name) => {
-  const mayusName = name.charAt(0).toUpperCase() + name.slice(1);
-  return mayusName;
+const checkIsVowel = (character) => {
+  const bannedWords = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+  return bannedWords.includes(character);
 };
 
-const removeVowels = (word) => {
-  const characters = word.toLowerCase().split("");
+const SearchForAnomalies = (checkWord) => typeof checkWord === "string";
 
-  const result = characters.map((character) =>
-    character === "a" || character === "o" || character === "i" || character === "e" || character === "u"
-      ? "_"
-      : character
-  );
+const removeVowels = (word, underLine = "") => {
+  if (!SearchForAnomalies(word)) throw new Error("Invalid format");
 
-  return mayusFirstLetter(result.join(""));
+  const characters = word.split("");
+
+  const result = characters.map((character) => (checkIsVowel(character) ? underLine : character));
+
+  return result.join("");
 };
 
 module.exports = removeVowels;

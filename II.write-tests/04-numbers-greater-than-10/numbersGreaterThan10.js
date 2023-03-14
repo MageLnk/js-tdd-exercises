@@ -1,5 +1,7 @@
-module.exports = function(array) {
-  return array.filter(number => {
-    return number > 10;
-  });
+const largerThanTen = (numbers) => {
+  return numbers.filter((number) => number > 10);
+};
+
+module.exports = {
+  largerThanTen,
 };
