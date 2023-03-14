@@ -1,12 +1,19 @@
-var removeVowels = require("../02-remove-vowels/remove-vowels");
+const removeVowels = require("../02-remove-vowels/remove-vowels");
 
-function removeVowelsForWords(words) {
-  var result = words.map(function(word) {
-    return removeVowels(word);
-  });
+const removeUnderline = (word) => {
+  const characters = word.split("");
+
+  const result = characters.map((character) => (character === "_" ? "" : character));
+
+  return result.join("");
+};
+
+const removeVowelsForWords = (words) => {
+  //const characters = words.split("");
+  const result = words.map((word) => removeUnderline(removeVowels(word)));
 
   return result;
-}
+};
 
 module.exports = removeVowelsForWords;
 

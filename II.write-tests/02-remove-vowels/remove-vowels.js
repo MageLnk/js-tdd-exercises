@@ -1,15 +1,18 @@
+const mayusFirstLetter = (name) => {
+  const mayusName = name.charAt(0).toUpperCase() + name.slice(1);
+  return mayusName;
+};
+
 const removeVowels = (word) => {
-  const characters = word.split("");
+  const characters = word.toLowerCase().split("");
 
-  const result = characters.map((character) => {
-    if (character === "a" || character === "o" || character === "i" || character === "e" || character === "u") {
-      return "_";
-    } else {
-      return character;
-    }
-  });
+  const result = characters.map((character) =>
+    character === "a" || character === "o" || character === "i" || character === "e" || character === "u"
+      ? "_"
+      : character
+  );
 
-  return result.join("");
+  return mayusFirstLetter(result.join(""));
 };
 
 module.exports = removeVowels;
