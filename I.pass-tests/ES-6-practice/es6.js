@@ -4,8 +4,7 @@ const arrow = () => {
 };
 
 //Use the es6 syntax for default parameter
-const defaultParameter = (name) => {
-  const name = name || "sam";
+const defaultParameter = (name = "sam") => {
   return name;
 };
 
@@ -15,8 +14,8 @@ const combineArrays = (arr1, arr2) => {
 };
 
 //use destructuring to return the object's cyf property
-const destructuring = (obj) => {
-  return obj.cyf;
+const destructuring = ({ cyf }) => {
+  return cyf;
 };
 
 // use template literal to return a string with the sum of a and b

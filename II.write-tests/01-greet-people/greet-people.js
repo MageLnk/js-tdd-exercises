@@ -1,12 +1,10 @@
-function greetPeople(people) {
-  var greeting = "Hello ";
+const greetPeople = (people) => {
+  const greeting = "Hello ";
 
-  people.forEach(function(person) {
-    greeting = greeting + person;
-  });
+  const greetingPeople = people.map((result) => `${greeting}${result}`);
 
-  return greeting;
-}
+  return greetingPeople;
+};
 
 module.exports = greetPeople;
 

@@ -1,24 +1,16 @@
-function removeVowels(word) {
-  var characters = word.split("");
+const removeVowels = (word) => {
+  const characters = word.split("");
 
-  var result = [];
-
-  characters.forEach(function(character) {
-    if (
-      character === "a" ||
-      character === "o" ||
-      character === "i" ||
-      character === "e" ||
-      character === "u"
-    ) {
-      result.push(character);
+  const result = characters.map((character) => {
+    if (character === "a" || character === "o" || character === "i" || character === "e" || character === "u") {
+      return "_";
     } else {
-      result.push("_");
+      return character;
     }
   });
 
   return result.join("");
-}
+};
 
 module.exports = removeVowels;
 
