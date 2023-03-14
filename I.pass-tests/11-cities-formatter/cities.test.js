@@ -26,4 +26,43 @@ a keys in an array of objects`, () => {
     //Assert
     expect(result).toEqual(expected);
   });
+
+  test(`Should throw error when recieve when of the objects is a wrong key`, () => {
+    //Arrange
+    const capitals = [
+      { city: "Paris", countri: "France" },
+      { city: "Madrid", country: "Spain" },
+      { city: "Rome", country: "Italy" },
+    ];
+
+    // Act and Assert
+    expect(() => formatCities(capitals)).toThrow(/^Invalid format$/);
+  });
+
+  test(`Should throw error when a key's value recieve a null`, () => {
+    //Arrange
+    const capitals = [
+      { city: null, countri: "France" },
+      { city: "Madrid", country: "Spain" },
+      { city: "Rome", country: "Italy" },
+    ];
+
+    // Act and Assert
+    expect(() => formatCities(capitals)).toThrow(/^Invalid format$/);
+  });
+
+  it("Will throw error when received an empty array", () => {
+    //Arrange
+    const capitals = [];
+
+    // Act & Assert
+    expect(() => formatCities(capitals)).toThrow(/^Invalid format$/);
+  });
+
+  it("Will throw error when received null", () => {
+    // Arrange
+    const capitals = null;
+    // Act & Assert
+    expect(() => formatCities(capitals)).toThrow(/^Invalid format$/);
+  });
 });
