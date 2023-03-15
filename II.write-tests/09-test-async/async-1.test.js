@@ -5,6 +5,7 @@ const getRepos = require("./async-1");
 jest.mock("node-fetch");
 
 describe(`Given getRepos function`, () => {
+  // Arrange
   const url = "https://api.github.com/users/kabaros/repos";
 
   beforeAll(() => {
