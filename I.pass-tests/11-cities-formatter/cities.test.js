@@ -1,7 +1,7 @@
 const { formatCities } = require("./cities");
 
 describe(`Given formatCities function`, () => {
-  test(`Should build one array of strings ["Paris is the capital of France", 
+  test(`It Should build one array of strings ["Paris is the capital of France", 
 "Madrid is the capital of Spain", "Rome is the capital of Italy"] when recieve cities and countrys as
 a keys in an array of objects`, () => {
     //Arrange
@@ -27,7 +27,7 @@ a keys in an array of objects`, () => {
     expect(result).toEqual(expected);
   });
 
-  test(`Should throw error when recieve when of the objects is a wrong key`, () => {
+  test(`It Should throw error when recieve when of the objects is a wrong key`, () => {
     //Arrange
     const capitals = [
       { city: "Paris", countri: "France" },
@@ -39,7 +39,7 @@ a keys in an array of objects`, () => {
     expect(() => formatCities(capitals)).toThrow(/^Invalid format$/);
   });
 
-  test(`Should throw error when a key's value recieve a null`, () => {
+  test(`It Should throw error when a key's value recieve a null`, () => {
     //Arrange
     const capitals = [
       { city: null, countri: "France" },
@@ -51,7 +51,7 @@ a keys in an array of objects`, () => {
     expect(() => formatCities(capitals)).toThrow(/^Invalid format$/);
   });
 
-  it("Will throw error when received an empty array", () => {
+  it("It Will throw error when received an empty array", () => {
     //Arrange
     const capitals = [];
 

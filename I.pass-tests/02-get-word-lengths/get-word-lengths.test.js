@@ -1,7 +1,7 @@
 const { getWordLengths } = require("./get-word-lengths");
 
 describe("Given the getWordLength function", () => {
-  it(`Should count the length of ['sun', 'potato', 'roundabout', 'pizza'] and response [3, 6, 10, 5]`, () => {
+  it(`It should count the length of ['sun', 'potato', 'roundabout', 'pizza'] and response [3, 6, 10, 5]`, () => {
     //Arrange
     const words = ["sun", "potato", "roundabout", "pizza"];
     const expected = [3, 6, 10, 5];
@@ -11,42 +11,42 @@ describe("Given the getWordLength function", () => {
     expect(output).toEqual(expected);
   });
 
-  it(`Will throw error when received number inside of the array`, () => {
+  it(`It will throw error when received number inside of the array`, () => {
     //Arrange
     const words = ["sun", "potato", 3, "pizza"];
     // Act & Assert
     expect(() => getWordLengths(words)).toThrow(/^Invalid format$/);
   });
 
-  it(`Will throw error when received {} inside of the array`, () => {
+  it(`It will throw error when received {} inside of the array`, () => {
     //Arrange
     const words = ["sun", "potato", {}, "pizza"];
     // Act & Assert
     expect(() => getWordLengths(words)).toThrow(/^Invalid format$/);
   });
 
-  it(`Will throw error when received [] inside of the array`, () => {
+  it(`It will throw error when received [] inside of the array`, () => {
     //Arrange
     const words = ["sun", "potato", [], "pizza"];
     // Act & Assert
     expect(() => getWordLengths(words)).toThrow(/^Invalid format$/);
   });
 
-  it("Will throw error when received null", () => {
+  it("It will throw error when received null", () => {
     // Arrange
     const words = null;
     // Act & Assert
     expect(() => getWordLengths(words)).toThrow(/^Invalid format$/);
   });
 
-  it("Will throw error when received boolean", () => {
+  it("It will throw error when received boolean", () => {
     // Arrange
     const words = false;
     // Act and Assert
     expect(() => getWordLengths(words)).toThrow(/^Invalid format$/);
   });
 
-  it("Will throw error when received a string", () => {
+  it("It will throw error when received a string", () => {
     // Arrange
     const words = "test";
     // Act and Assert

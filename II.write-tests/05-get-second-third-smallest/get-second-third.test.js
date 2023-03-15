@@ -1,13 +1,13 @@
-const name = require("./get-second-third");
+const { findSecondAndThirdSmallestNumbers } = require("./get-second-third");
 
-describe(`Given the name function`, () => {
-  test("???", () => {
+describe(`Given the findSecondAndThirdSmallestNumbers function`, () => {
+  test(`It should return the second and thrid smallest number`, () => {
     // Arrange
     const numbers = [90, 5, 11, 8, 6];
     const expected = [6, 8];
 
     // Act
-    const output = name(numbers);
+    const output = findSecondAndThirdSmallestNumbers(numbers);
 
     // Assert
     expect(output).toEqual(expected);
