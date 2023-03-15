@@ -15,6 +15,7 @@ describe(`Given getRepos function`, () => {
     // Act
     return getRepos(url).then((result) => {
       // Assert
+      //expect(result).toContain("js-exercises");
       expect(result).toContain("honesto");
       expect(result).toContain("dom-ajax-repo");
     });
