@@ -1,6 +1,20 @@
 const fizzbuzz = require("./fizz-buzz");
 
 describe("Given the fizzbuzz function", () => {
+  it("Will throw error when received boolean", () => {
+    // Arrange
+    const number = false;
+    // Act and Assert
+    expect(() => fizzbuzz(number)).toThrow(/^Invalid format$/);
+  });
+
+  it("Will throw error when received []", () => {
+    // Arrange
+    const number = [];
+    // Act and Assert
+    expect(() => fizzbuzz(number)).toThrow(/^Invalid format$/);
+  });
+
   test("It should prints '1' when the number is 1", () => {
     // Arrange
     const number = 1;

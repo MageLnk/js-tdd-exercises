@@ -1,4 +1,6 @@
 const fizzbuzz = (num) => {
+  if (typeof num !== "number") throw new Error("Invalid format");
+
   //const arrayBasedOnNum = Array.from(Array(num).keys(), (x) => x + 1); // Versión ES6
   // const arrayBasedOnNum = [...Array(10).keys(), x => x + 1] // Versión usando spread operator
   const arrayBasedOnNum = Array.from({ length: num }, (_, i) => i + 1); // Versión manipulable, sin hace otro map
