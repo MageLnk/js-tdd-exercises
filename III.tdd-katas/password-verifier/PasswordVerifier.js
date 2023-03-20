@@ -23,3 +23,17 @@ class PasswordVerifier {
 }
 
 module.exports = PasswordVerifier;
+
+/*
+
+Incompetencia desconocida. No sé lo que no sé
+Incompetencia conciente. Yo sé que no sé
+Competencia conciente. Aprendiendo
+Competencia inconciente. Es como el talento. Es como respirar.
+
+Cambiar la estructura sin cambiar el comportamiento. Eso es factorizar
+¿Lo opuesto?
+Cambiar el comportamiento sin cambiar la estructura. Se llama transformación
+
+
+*/

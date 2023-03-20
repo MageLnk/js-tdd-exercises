@@ -1,4 +1,4 @@
-const { convertToOldRoman } = require("./romanNumbers");
+const { convertToOldRoman, convertToNewRoman } = require("./romanNumbers");
 
 describe("Given the romanNumbers function", () => {
   test("It should exist", () => {
@@ -35,6 +35,17 @@ describe("Given the romanNumbers function", () => {
     expect(convertToOldRoman(num)).toBe(output);
   });
 
+  test("It should return 'IV' if the number is 4", () => {
+    // Arrange
+    const num = 4;
+
+    // Act
+    const output = "IV";
+
+    // Assert
+    expect(convertToNewRoman(num)).toBe(output);
+  });
+
   test("It should return 'LI' if the number is 51", () => {
     // Arrange
     const num = 51;
@@ -66,5 +77,16 @@ describe("Given the romanNumbers function", () => {
 
     // Assert
     expect(convertToOldRoman(num)).toBe(output);
+  });
+
+  test("It should return 'MDCLXVI' if the number is 2999", () => {
+    // Arrange
+    const num = 2999;
+
+    // Act
+    const output = "MMCMXCIX";
+
+    // Assert
+    expect(convertToNewRoman(num)).toBe(output);
   });
 });
