@@ -8,7 +8,7 @@ describe("PasswordVerifier function", () => {
 
   it("It should throw an error if password length is smaller than 8", () => {
     // Arrange
-    const password = "1234567";
+    const password = "1234s67";
 
     // Act and Assert
     expect(() => passwordVerifierFunction(password)).toThrow("Password should be larger than 8 chars");
