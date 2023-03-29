@@ -9,9 +9,9 @@ const add = (word) => {
   const negativeNumbers = parsedNumbers.filter((num) => num < 0);
   if (negativeNumbers.length > 0) throw new Error(`Negatives not allowed: ${negativeNumbers.join(", ")}`);
 
-  const ignoringBiggerNumbers = parsedNumbers.filter((num) => num < 1001);
+  const capturingValidNumbers = parsedNumbers.filter((num) => num < 1001);
 
-  return ignoringBiggerNumbers.reduce((partialSum, newValue) => partialSum + newValue, 0);
+  return capturingValidNumbers.reduce((partialSum, newValue) => partialSum + newValue, 0);
 };
 
 module.exports = {
